@@ -1,24 +1,37 @@
+import styles from "./NavBar.module.scss";
 const NavBar = () => {
-    return (
-  <nav> 
-    <div className="navbar-logo">
-    <img src="/ProdlensLogo.svg" alt="Prodlens Logo" />
-    <span>Prodlens</span>
-    </div>
-    <div className="navbar-links">
+  return (
+    <nav className={styles.navbar}>
+        <span className={styles.navbarLogo}>
+          <img
+            src="/ProdlensLogo.svg"
+            alt="Prodlens Logo"
+            width={24}
+            height={24}
+          />
+          <span>Prodlens</span>
+        </span>
         <a href="/trends">Trends</a>
         <a href="/reviews">Reviews</a>
         <a href="/qa">Q&A</a>
-        <a href="https://github.com/HYPERVAPOR/prodlens" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-        <img src="/github-mark-white.svg" alt="GitHub" />
+        <a
+          href="https://github.com/HYPERVAPOR/prodlens"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="GitHub"
+        >
+          <img
+            src="/github-mark-white.svg"
+            alt="GitHub"
+            width={24}
+            height={24}
+          />
         </a>
-        <button className="language-button">
-            <img src="/globe.svg" alt="Language" />
-            <span>中文</span>
+        <button className={styles.languageButton}>
+          <img src="/globe.svg" alt="Language" />
+          <span>中文</span>
         </button>
-
-    </div>
-  </nav>
-    )
-}
+    </nav>
+  );
+};
 export default NavBar;

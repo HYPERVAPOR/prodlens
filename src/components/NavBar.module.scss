@@ -1,0 +1,12 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    width: 70%;
+}
+
+.navbarLogo>:first-child{
+    vertical-align: middle;
+    margin: 0 5px;
+}
