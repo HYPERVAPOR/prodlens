@@ -6,7 +6,16 @@
     width: 70%;
 }
 
+.navbarLogo{
+    font-family: 'Impact', 'Arial Black', sans-serif;
+}
 .navbarLogo>:first-child{
     vertical-align: middle;
     margin: 0 5px;
+}
+
+.navbarLinks{
+    display: flex;
+    gap: 20px;
+    align-items: center;
 }

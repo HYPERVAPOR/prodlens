@@ -11,6 +11,7 @@ const NavBar = () => {
           />
           <span>Prodlens</span>
         </span>
+        <div className={styles.navbarLinks}>
         <a href="/trends">Trends</a>
         <a href="/reviews">Reviews</a>
         <a href="/qa">Q&A</a>
@@ -31,6 +32,7 @@ const NavBar = () => {
           <img src="/globe.svg" alt="Language" />
           <span>中文</span>
         </button>
+        </div>
     </nav>
   );
 };
