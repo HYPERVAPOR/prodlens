@@ -9,7 +9,7 @@ export default function MainHomePage() {
       </h1>
       <h2 className={styles.h1Description}>
         Track newly launched products worldwide in real-time and get in-depth
-        reviews to make smarter decisions.
+        reviews to make smarter decisions
       </h2>
       <MainButtonWrapper/>
       <LogoCarousel/>

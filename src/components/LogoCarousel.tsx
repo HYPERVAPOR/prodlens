@@ -56,6 +56,7 @@ export default function LogoCarousel() {
           </div>
         ))}
       </div>
+      <p className={styles.logoCarouselDescription}>Comprehensive Research and Evaluation of AI Products Worldwide</p>
     </div>
   );
 }
