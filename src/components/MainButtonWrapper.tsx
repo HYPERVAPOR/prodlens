@@ -11,20 +11,33 @@ export default function MainButtonWrapper() {
           xmlns="http://www.w3.org/2000/svg"
           className={styles.trendsIcon}
         >
+          {/* Y轴 */}
           <path 
-            d="M3 17L9 11L13 15L21 7" 
+            d="M3 3V21" 
+            stroke="currentColor" 
+            strokeWidth="1.5" 
+            strokeLinecap="round"
+          />
+          {/* X轴 */}
+          <path 
+            d="M3 21H21" 
+            stroke="currentColor" 
+            strokeWidth="1.5" 
+            strokeLinecap="round"
+          />
+          {/* 折线图 */}
+          <path 
+            d="M5 17L9 11L13 15L19 7" 
             stroke="currentColor" 
             strokeWidth="2" 
             strokeLinecap="round" 
             strokeLinejoin="round"
           />
-          <path 
-            d="M21 7V13H15" 
-            stroke="currentColor" 
-            strokeWidth="2" 
-            strokeLinecap="round" 
-            strokeLinejoin="round"
-          />
+          {/* 数据点 */}
+          <circle cx="5" cy="17" r="1.5" fill="currentColor" />
+          <circle cx="9" cy="11" r="1.5" fill="currentColor" />
+          <circle cx="13" cy="15" r="1.5" fill="currentColor" />
+          <circle cx="19" cy="7" r="1.5" fill="currentColor" />
         </svg>
         <span>Trends</span>
       </button>

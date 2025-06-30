@@ -1,5 +1,6 @@
 import styles from "./MainHomePage.module.scss";
 import MainButtonWrapper from "./MainButtonWrapper";
+import LogoCarousel from "./LogoCarousel";
 export default function MainHomePage() {
   return (
     <div>
@@ -11,6 +12,7 @@ export default function MainHomePage() {
         reviews to make smarter decisions.
       </h2>
       <MainButtonWrapper/>
+      <LogoCarousel/>
     </div>
   );
 }
