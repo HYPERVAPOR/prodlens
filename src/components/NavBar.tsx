@@ -1,4 +1,5 @@
 import styles from "./NavBar.module.scss";
+
 const NavBar = () => {
   return (
     <nav className={styles.navbar}>
@@ -11,6 +12,25 @@ const NavBar = () => {
           />
           <span>Prodlens</span>
         </span>
+        
+        {/* 隐藏的checkbox用于控制菜单状态 */}
+        <input 
+          type="checkbox" 
+          id="menu-toggle" 
+          className={styles.menuToggle}
+        />
+        
+        {/* 汉堡菜单按钮 */}
+        <label 
+          htmlFor="menu-toggle"
+          className={styles.hamburgerMenu}
+          aria-label="Toggle menu"
+        >
+          <span className={styles.hamburgerLine}></span>
+          <span className={styles.hamburgerLine}></span>
+          <span className={styles.hamburgerLine}></span>
+        </label>
+
         <div className={styles.navbarLinks}>
         <a href="/trends">Trends</a>
         <a href="/reviews">Reviews</a>

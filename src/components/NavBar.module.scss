@@ -4,11 +4,21 @@
     align-items: center;
     margin: 0 auto;
     width: 70%;
+    padding: 1rem 0;
+    position: relative;
+    color: #ffffff;
 }
 
 .navbarLogo{
     font-family: 'Impact', 'Arial Black', sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.5rem;
+    font-weight: medium;
+    color: #ffffff;
 }
+
 .navbarLogo>:first-child{
     vertical-align: middle;
     margin: 0 5px;
@@ -18,4 +28,136 @@
     display: flex;
     gap: 20px;
     align-items: center;
+}
+
+.navbarLinks a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    
+    &:hover {
+        color: #C71585;
+    }
+}
+
+.languageButton {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+    
+    &:hover {
+        background-color: rgba(199, 21, 133, 0.1);
+    }
+}
+
+// 隐藏的checkbox
+.menuToggle {
+    display: none;
+}
+
+// 汉堡菜单样式
+.hamburgerMenu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 10;
+}
+
+.hamburgerLine {
+    width: 100%;
+    height: 3px;
+    background-color: #ffffff;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+// 响应式设计
+@media (max-width: 768px) {
+    .navbar {
+        width: 90%;
+        padding: 1rem 0;
+    }
+    
+    .hamburgerMenu {
+        display: flex;
+    }
+    
+    .navbarLinks {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 250px;
+        height: 100vh;
+        background-color: #0a0a0a;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 80px 2rem 2rem 2rem;
+        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+        transition: right 0.3s ease;
+        z-index: 5;
+        gap: 1.5rem;
+    }
+    
+    // 当checkbox被选中时显示菜单
+    .menuToggle:checked ~ .navbarLinks {
+        right: 0;
+        background-color: #0a0a0a;
+    }
+    
+    // 当checkbox被选中时汉堡菜单变为X
+    .menuToggle:checked ~ .hamburgerMenu .hamburgerLine:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+    }
+    
+    .menuToggle:checked ~ .hamburgerMenu .hamburgerLine:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .menuToggle:checked ~ .hamburgerMenu .hamburgerLine:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+    }
+    
+    .navbarLinks a {
+        font-size: 1.1rem;
+        padding: 0.5rem 0;
+        width: 100%;
+        border-bottom: 1px solid #f0f0f0;
+    }
+    
+    .languageButton {
+        margin-top: 1rem;
+        width: 100%;
+        justify-content: flex-start;
+        padding: 0.5rem 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        width: 95%;
+    }
+    
+    .navbarLogo {
+        font-size: 1.2rem;
+    }
+    
+    .navbarLinks {
+        width: 100%;
+        right: -100%;
+    }
 }

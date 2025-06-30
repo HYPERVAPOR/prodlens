@@ -1,0 +1,62 @@
+.buttonWrapper {
+  display: flex;
+  gap: 16px;
+  margin-top: 32px;
+  justify-content: center;
+  align-items: center;
+}
+
+.trendsButton,
+.reviewsButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  background: white;
+  color: #374151;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  &:hover {
+    border-color: #C71585;
+    color: #C71585;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(199, 21, 133, 0.2);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+.trendsIcon,
+.reviewsIcon {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
+}
+
+.trendsButton:hover .trendsIcon,
+.reviewsButton:hover .reviewsIcon {
+  transform: scale(1.1);
+}
+
+// 响应式设计
+@media (max-width: 768px) {
+  .buttonWrapper {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .trendsButton,
+  .reviewsButton {
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
+  }
+}
