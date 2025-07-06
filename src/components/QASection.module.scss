@@ -1,0 +1,186 @@
+.qaSection {
+  padding: 80px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 16px;
+  background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #999;
+  line-height: 1.6;
+}
+
+.qaList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.qaCheckbox {
+  display: none;
+}
+
+.qaItem {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(199, 21, 133, 0.2);
+  }
+}
+
+.questionButton {
+  width: 100%;
+  padding: 24px 32px;
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: left;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  &:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.05);
+  }
+}
+
+.questionText {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffffff;
+  flex: 1;
+  margin-right: 16px;
+}
+
+.arrow {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #C71585;
+  transition: all 0.3s ease;
+  min-width: 20px;
+  text-align: center;
+}
+
+.answerContainer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+// 使用 CSS 选择器实现折叠功能
+.qaCheckbox:checked + .questionButton {
+  background: rgba(199, 21, 133, 0.1);
+  border-bottom: 1px solid rgba(199, 21, 133, 0.2);
+}
+
+.qaCheckbox:checked + .questionButton .arrow {
+  transform: rotate(45deg);
+}
+
+.qaCheckbox:checked ~ .answerContainer {
+  max-height: 300px;
+  padding: 0 32px 24px 32px;
+}
+
+.answer {
+  color: #ccc;
+  line-height: 1.7;
+  font-size: 0.95rem;
+  padding-top: 16px;
+}
+
+// 响应式设计
+@media (max-width: 768px) {
+  .qaSection {
+    padding: 60px 0;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .questionButton {
+    padding: 20px 24px;
+  }
+
+  .questionText {
+    font-size: 1rem;
+  }
+
+  .qaCheckbox:checked ~ .answerContainer {
+    padding: 0 24px 20px 24px;
+  }
+
+  .answer {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .qaSection {
+    padding: 40px 0;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+
+  .questionButton {
+    padding: 16px 20px;
+  }
+
+  .questionText {
+    font-size: 0.95rem;
+  }
+
+  .qaCheckbox:checked ~ .answerContainer {
+    padding: 0 20px 16px 20px;
+  }
+
+  .answer {
+    font-size: 0.85rem;
+  }
+} 

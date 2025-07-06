@@ -4,9 +4,9 @@
   position: relative;
  
   padding: 40px 0;
-  margin: 60px auto;
-  
-  // 添加左右边缘羽化效果
+  margin: 0px auto;
+
+  // 添加左右羽化效果
   &::before,
   &::after {
     content: '';
@@ -17,25 +17,23 @@
     z-index: 2;
     pointer-events: none;
   }
-  
+
   &::before {
     left: 0;
     background: linear-gradient(to right, 
-      rgba(255, 255, 255, 1) 0%, 
-      rgba(255, 255, 255, 0.8) 20%, 
-      rgba(255, 255, 255, 0.4) 50%, 
-      rgba(255, 255, 255, 0.1) 80%, 
-      rgba(255, 255, 255, 0) 100%);
+      #0a0a0a 0%, 
+      rgba(10, 10, 10, 0.8) 30%, 
+      rgba(10, 10, 10, 0.4) 60%, 
+      rgba(10, 10, 10, 0) 100%);
   }
-  
+
   &::after {
     right: 0;
     background: linear-gradient(to left, 
-      rgba(255, 255, 255, 1) 0%, 
-      rgba(255, 255, 255, 0.8) 20%, 
-      rgba(255, 255, 255, 0.4) 50%, 
-      rgba(255, 255, 255, 0.1) 80%, 
-      rgba(255, 255, 255, 0) 100%);
+      #0a0a0a 0%, 
+      rgba(10, 10, 10, 0.8) 30%, 
+      rgba(10, 10, 10, 0.4) 60%, 
+      rgba(10, 10, 10, 0) 100%);
   }
 }
 
@@ -57,14 +55,14 @@
   margin: 0 40px;
   min-width: 120px;
   height: 80px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
   border-radius: 12px;
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease;
   
   &:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.1);
     transform: translateY(-5px);
     box-shadow: 0 10px 25px rgba(255, 7, 98, 0.2);
     border: 1px solid #C71585;
@@ -101,10 +99,10 @@
 .logoCarouselDescription {
   text-align: center;
   font-size: 14px;
-  color: #666;
+  color: #999;
   margin: 20px auto;
-
-
+  max-width: 600px;
+  line-height: 1.5;
 }
 
 @keyframes scroll {
@@ -142,6 +140,11 @@
   .carouselTrack {
     animation-duration: 20s;
   }
+  
+  .logoCarouselDescription {
+    font-size: 13px;
+    margin: 15px auto;
+  }
 }
 
 @media (max-width: 480px) {
@@ -169,36 +172,11 @@
   .carouselTrack {
     animation-duration: 15s;
   }
+  
+  .logoCarouselDescription {
+    font-size: 12px;
+    margin: 10px auto;
+  }
 }
 
-// 深色模式适配
-@media (prefers-color-scheme: dark) {
-  .logoCarousel {
-    &::before {
-      background: linear-gradient(to right, 
-        rgba(0, 0, 0, 1) 0%, 
-        rgba(0, 0, 0, 0.8) 20%, 
-        rgba(0, 0, 0, 0.4) 50%, 
-        rgba(0, 0, 0, 0.1) 80%, 
-        rgba(0, 0, 0, 0) 100%);
-    }
-    
-    &::after {
-      background: linear-gradient(to left, 
-        rgba(0, 0, 0, 1) 0%, 
-        rgba(0, 0, 0, 0.8) 20%, 
-        rgba(0, 0, 0, 0.4) 50%, 
-        rgba(0, 0, 0, 0.1) 80%, 
-        rgba(0, 0, 0, 0) 100%);
-    }
-  }
-  
-  .logoItem {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    
-    &:hover {
-      background: rgba(255, 255, 255, 0.1);
-    }
-  }
-}
+

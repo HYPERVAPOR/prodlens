@@ -1,0 +1,178 @@
+.featureShowcase {
+  padding: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 1;
+}
+
+
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 40px;
+  margin-top: 40px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.featureCard {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 32px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #C71585, #FF0762);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+
+  &:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(199, 21, 133, 0.3);
+    box-shadow: 0 20px 40px rgba(199, 21, 133, 0.2);
+
+    &::before {
+      transform: scaleX(1);
+    }
+
+    .iconWrapper {
+      transform: scale(1.05);
+      background: linear-gradient(135deg, rgba(199, 21, 133, 0.2), rgba(255, 7, 98, 0.2));
+      border: 1px solid rgba(199, 21, 133, 0.3);
+
+      &::before {
+        opacity: 1;
+      }
+    }
+
+    .icon {
+      transform: scale(1.1);
+      color: #ffffff;
+    }
+  }
+}
+
+.iconWrapper {
+  width: 70px;
+  height: 70px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(199, 21, 133, 0.1), rgba(255, 7, 98, 0.1));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+}
+
+.icon {
+  color: #ffffff;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.featureTitle {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.featureDescription {
+  color: #ccc;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+// 响应式设计
+@media (max-width: 768px) {
+  .featureShowcase {
+    padding: 60px 0;
+  }
+
+
+
+  .featuresGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .featureCard {
+    padding: 24px;
+  }
+
+  .iconWrapper {
+    width: 60px;
+    height: 60px;
+  }
+
+  .icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .featureTitle {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .featureShowcase {
+    padding: 40px 0;
+  }
+
+
+
+  .container {
+    padding: 0 16px;
+  }
+
+  .featureCard {
+    padding: 20px;
+  }
+
+  .iconWrapper {
+    width: 55px;
+    height: 55px;
+  }
+
+  .icon {
+    width: 20px;
+    height: 20px;
+  }
+} 
