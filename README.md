@@ -1,64 +1,110 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Prodlens - AI Product Data Tracking & Experience Sharing Platform
 
-## Getting Started
+[![Deploy to GitHub Pages](https://github.com/HYPERVAPOR/prodlens/actions/workflows/deploy.yml/badge.svg)](https://github.com/HYPERVAPOR/prodlens/actions/workflows/deploy.yml)
+[![Website](https://img.shields.io/badge/Website-Live-brightgreen)](https://hypervapor.github.io/prodlens/)
 
-First, run the development server:
+Prodlens is an open-source platform dedicated to AI product data tracking and user experience sharing. We are committed to providing a comprehensive research, evaluation, and discussion space for global AI products.
+
+## ✨ Core Features
+
+### 🔍 AI Product Data Tracking
+- **Real-time Trend Analysis**: Track the latest development trends and market dynamics of AI products
+- **Product Database**: Comprehensive collection of major AI products worldwide with detailed product information
+- **Data Visualization**: Intuitive display of key metrics such as product performance and user reviews
+
+### 💬 Product Experience Sharing
+- **User Review System**: Share authentic product usage experiences and evaluations
+- **Community Discussion**: Deep discussions and technical exchanges around AI products
+- **Multi-language Support**: Support for Chinese, English, Japanese, Korean, and other languages
+
+### 🎯 Platform Highlights
+- **Responsive Design**: Perfect adaptation for desktop and mobile devices
+- **Modern UI**: Adopts the latest design trends to provide excellent user experience
+- **Open Source**: Completely open source, welcoming community contributions and improvements
+
+## 🚀 Quick Start
+
+### Local Development
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+# Clone the repository
+git clone https://github.com/HYPERVAPOR/prodlens.git
+cd prodlens
+
+# Install dependencies
+pnpm install
+
+# Start development server
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Visit [http://localhost:3000](http://localhost:3000) to view the project.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-
-## 部署到 GitHub Pages
-
-### 自动部署（推荐）
-
-1. 将代码推送到GitHub仓库的main分支
-2. 在GitHub仓库设置中启用GitHub Pages：
-   - 进入仓库设置 → Pages
-   - Source选择 "Deploy from a branch"
-   - Branch选择 "gh-pages" 分支
-   - 保存设置
-
-3. GitHub Actions会自动构建并部署您的网站
-
-### 手动部署
+### Build & Deploy
 
 ```bash
-# 构建项目
+# Build the project
 pnpm run build
 
-# 部署到GitHub Pages
-pnpm run deploy
+# Preview build results locally
+pnpm start
 ```
 
-### 访问网站
+## 🌐 Live Demo
 
-部署完成后，您的网站将可以通过以下地址访问：
-`https://[您的GitHub用户名].github.io/prodlens/`
+The project is deployed on GitHub Pages at:
+**https://hypervapor.github.io/prodlens/**
+
+## 🤝 How to Contribute
+
+We welcome all forms of contributions! Whether it's code, design, documentation, or ideas, everything is valuable to us.
+
+### Ways to Contribute
+
+1. **Report Issues**
+   - Report bugs or suggest features in [Issues](https://github.com/HYPERVAPOR/prodlens/issues)
+   - Please describe the problem in detail and provide reproduction steps
+
+2. **Submit Code**
+   - Fork this repository
+   - Create a feature branch: `git checkout -b feature/your-feature-name`
+   - Commit your changes: `git commit -m 'Add some feature'`
+   - Push to the branch: `git push origin feature/your-feature-name`
+   - Submit a Pull Request
+
+3. **Improve Documentation**
+   - Enhance README documentation
+   - Add code comments
+   - Write usage tutorials
+
+4. **Design Contributions**
+   - Provide UI/UX improvement suggestions
+   - Contribute design resources
+   - Optimize user experience
+
+### Development Guidelines
+
+- Use TypeScript for development
+- Follow ESLint code standards
+- Use SCSS modules for component styling
+- Use clear English descriptions for commit messages
+
+### Tech Stack
+
+- **Framework**: Next.js 15.3.4
+- **Language**: TypeScript
+- **Styling**: SCSS Modules
+- **Package Manager**: pnpm
+- **Deployment**: GitHub Pages
+
+## 📄 License
+
+This project is licensed under the GNU General Public License v3.0 - see the [GPL-3.0 License](https://www.gnu.org/licenses/gpl-3.0.en.html) for details.
+
+## 🙏 Acknowledgments
+
+Thanks to all developers who have contributed to this project!
+
+---
+
+**Let's build a better AI product ecosystem together!** 🚀
