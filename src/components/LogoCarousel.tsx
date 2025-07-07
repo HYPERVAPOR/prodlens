@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import styles from "./LogoCarousel.module.scss";
 
 export default function LogoCarousel() {
@@ -30,9 +31,11 @@ export default function LogoCarousel() {
               rel="noopener noreferrer"
               className={styles.logoLink}
             >
-              <img 
+              <Image 
                 src={logo.src} 
                 alt={logo.alt} 
+                width={120}
+                height={60}
                 className={styles.logoImage}
               />
             </a>
@@ -47,9 +50,11 @@ export default function LogoCarousel() {
               rel="noopener noreferrer"
               className={styles.logoLink}
             >
-              <img 
+              <Image 
                 src={logo.src} 
                 alt={logo.alt} 
+                width={120}
+                height={60}
                 className={styles.logoImage}
               />
             </a>

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from 'next/image';
 import styles from "./NavBar.module.scss";
 import LanguageSelector from "./LanguageSelector";
 import { useEffect, useState } from "react";
@@ -38,7 +39,7 @@ const NavBar = () => {
       } as React.CSSProperties}
     >
         <span className={styles.navbarLogo}>
-          <img
+          <Image
             src="/ProdlensLogo.svg"
             alt="Prodlens Logo"
             width={24}
@@ -75,7 +76,7 @@ const NavBar = () => {
           rel="noopener noreferrer"
           aria-label="GitHub"
         >
-          <img
+          <Image
             src="/github-mark-white.svg"
             alt="GitHub"
             width={24}

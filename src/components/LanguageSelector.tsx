@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
+import Image from 'next/image';
 import styles from './LanguageSelector.module.scss';
 
 interface Language {
@@ -57,7 +58,7 @@ const LanguageSelector = () => {
         aria-label="选择语言"
         aria-expanded={isOpen}
       >
-        <img src="/globe.svg" alt="Language" width={24} height={24} />
+        <Image src="/globe.svg" alt="Language" width={24} height={24} />
         <span>{selectedLanguage.name}</span>
         <svg
           className={`${styles.arrow} ${isOpen ? styles.arrowUp : ''}`}
