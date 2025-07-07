@@ -26,15 +26,20 @@ const LanguageSelector = () => {
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+      const currentRef = dropdownRef.current;
+      if (currentRef && !currentRef.contains(event.target as Node)) {
         setIsOpen(false);
       }
     };
 
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
+    if (typeof document !== 'undefined') {
+      document.addEventListener('mousedown', handleClickOutside);
+      return () => {
+        if (typeof document !== 'undefined') {
+          document.removeEventListener('mousedown', handleClickOutside);
+        }
+      };
+    }
   }, []);
 
   const handleLanguageSelect = (language: Language) => {

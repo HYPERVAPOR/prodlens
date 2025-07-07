@@ -1,9 +1,42 @@
+"use client";
+
 import styles from "./NavBar.module.scss";
 import LanguageSelector from "./LanguageSelector";
+import { useEffect, useState } from "react";
 
 const NavBar = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const maxScroll = 200; // 最大滚动距离
+      const progress = Math.min(scrollTop / maxScroll, 1);
+      
+      setIsScrolled(scrollTop > 30);
+      setScrollProgress(progress);
+    };
+
+    // 确保window对象存在后再添加事件监听器
+    if (typeof window !== 'undefined') {
+      window.addEventListener('scroll', handleScroll, { passive: true });
+      return () => {
+        // 在清理函数中也添加安全检查
+        if (typeof window !== 'undefined') {
+          window.removeEventListener('scroll', handleScroll);
+        }
+      };
+    }
+  }, []);
+
   return (
-    <nav className={styles.navbar}>
+    <nav 
+      className={`${styles.navbar} ${isScrolled ? styles.scrolled : ''}`}
+      style={{
+        '--scroll-progress': scrollProgress
+      } as React.CSSProperties}
+    >
         <span className={styles.navbarLogo}>
           <img
             src="/ProdlensLogo.svg"

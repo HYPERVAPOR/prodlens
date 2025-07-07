@@ -6,7 +6,7 @@ import QASection from "./QASection";
 
 export default function MainHomePage() {
   return (
-    <div>
+    <div className={styles.mainContainer}>
       <h1 className={styles.h1Title}>
         Discover AI Product <span className={styles.highlightText}>Trends</span> <br />Insightful <span className={styles.highlightText}>Reviews</span> at Your Fingertips
       </h1>
