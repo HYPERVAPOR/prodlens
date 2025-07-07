@@ -34,3 +34,31 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## 部署到 GitHub Pages
+
+### 自动部署（推荐）
+
+1. 将代码推送到GitHub仓库的main分支
+2. 在GitHub仓库设置中启用GitHub Pages：
+   - 进入仓库设置 → Pages
+   - Source选择 "Deploy from a branch"
+   - Branch选择 "gh-pages" 分支
+   - 保存设置
+
+3. GitHub Actions会自动构建并部署您的网站
+
+### 手动部署
+
+```bash
+# 构建项目
+pnpm run build
+
+# 部署到GitHub Pages
+pnpm run deploy
+```
+
+### 访问网站
+
+部署完成后，您的网站将可以通过以下地址访问：
+`https://[您的GitHub用户名].github.io/prodlens/`
