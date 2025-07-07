@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 const NavBar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
+  const basePath = process.env.NODE_ENV === 'production' ? '/prodlens' : '';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -40,7 +41,7 @@ const NavBar = () => {
     >
         <span className={styles.navbarLogo}>
           <Image
-            src="/ProdlensLogo.svg"
+            src={`${basePath}/ProdlensLogo.svg`}
             alt="Prodlens Logo"
             width={24}
             height={24}
@@ -77,7 +78,7 @@ const NavBar = () => {
           aria-label="GitHub"
         >
           <Image
-            src="/github-mark-white.svg"
+            src={`${basePath}/github-mark-white.svg`}
             alt="GitHub"
             width={24}
             height={24}
