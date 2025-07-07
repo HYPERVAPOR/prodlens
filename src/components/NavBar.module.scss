@@ -28,6 +28,7 @@
     display: flex;
     gap: 20px;
     align-items: center;
+    flex-wrap: nowrap; /* 防止换行 */
 }
 
 .navbarLinks a {
@@ -41,21 +42,7 @@
     }
 }
 
-.languageButton {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 8px 12px;
-    border-radius: 6px;
-    transition: background-color 0.3s ease;
-    
-    &:hover {
-        background-color: rgba(199, 21, 133, 0.1);
-    }
-}
+
 
 // 隐藏的checkbox
 .menuToggle {
@@ -139,12 +126,7 @@
         border-bottom: 1px solid #f0f0f0;
     }
     
-    .languageButton {
-        margin-top: 1rem;
-        width: 100%;
-        justify-content: flex-start;
-        padding: 0.5rem 0;
-    }
+
 }
 
 @media (max-width: 480px) {

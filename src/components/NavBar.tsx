@@ -1,4 +1,5 @@
 import styles from "./NavBar.module.scss";
+import LanguageSelector from "./LanguageSelector";
 
 const NavBar = () => {
   return (
@@ -48,10 +49,7 @@ const NavBar = () => {
             height={24}
           />
         </a>
-        <button className={styles.languageButton}>
-          <img src="/globe.svg" alt="Language" />
-          <span>中文</span>
-        </button>
+        <LanguageSelector />
         </div>
     </nav>
   );
