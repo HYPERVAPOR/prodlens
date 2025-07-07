@@ -8,7 +8,7 @@ export default function MainHomePage() {
   return (
     <div>
       <h1 className={styles.h1Title}>
-        Discover AI Product <span className={styles.highlightText}>Trends</span>, <br />Insightful <span className={styles.highlightText}>Reviews</span> at Your Fingertips
+        Discover AI Product <span className={styles.highlightText}>Trends</span> <br />Insightful <span className={styles.highlightText}>Reviews</span> at Your Fingertips
       </h1>
       <h2 className={styles.h1Description}>
         Track newly launched products worldwide in real-time and get in-depth

@@ -3,8 +3,8 @@
   overflow: hidden;
   position: relative;
  
-  padding: 40px 0;
-  margin: 0px auto;
+  padding: 60px 0;
+  margin: 40px auto;
 
   // 添加左右羽化效果
   &::before,
@@ -98,11 +98,12 @@
 
 .logoCarouselDescription {
   text-align: center;
-  font-size: 14px;
+  font-size: 16px;
   color: #999;
-  margin: 20px auto;
+  margin: 30px auto;
   max-width: 600px;
   line-height: 1.5;
+  font-weight: 500;
 }
 
 @keyframes scroll {
