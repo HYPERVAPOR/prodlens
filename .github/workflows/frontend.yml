@@ -1,10 +1,16 @@
-name: Deploy to GitHub Pages
+name: Deploy Frontend to GitHub Pages
 
 on:
   push:
     branches: [ main ]
+    paths:
+      - 'frontend/**'
+      - '.github/workflows/frontend.yml'
   pull_request:
     branches: [ main ]
+    paths:
+      - 'frontend/**'
+      - '.github/workflows/frontend.yml'
 
 jobs:
   build-and-deploy:
@@ -40,17 +46,17 @@ jobs:
     - name: Install dependencies
       run: pnpm install --frozen-lockfile
       
-    - name: Build project
-      run: pnpm run build
+    - name: Build frontend project
+      run: pnpm --filter frontend run build
       env:
         NODE_ENV: production
         
     - name: Create .nojekyll file
-      run: touch out/.nojekyll
+      run: touch frontend/out/.nojekyll
       
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       if: github.ref == 'refs/heads/main'
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./out 
+        publish_dir: ./frontend/out 
