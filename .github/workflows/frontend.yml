@@ -65,14 +65,7 @@ jobs:
     - name: Copy public assets
       working-directory: ./frontend
       run: |
-        echo "当前工作目录: $(pwd)"
-        echo "检查构建产物..."
-        ls -la ./out/
-        echo "检查public目录..."
-        ls -la ./public/
-        echo "检查ProdLogos目录..."
-        ls -la ./public/ProdLogos/
-        
+        echo "复制静态资源..."
         # 确保ProdLogos目录存在
         mkdir -p ./out/ProdLogos
         # 复制所有图片文件
@@ -80,11 +73,7 @@ jobs:
         # 复制其他public文件（如果还没有的话）
         cp ./public/*.svg ./out/ 2>/dev/null || true
         cp ./public/*.ico ./out/ 2>/dev/null || true
-        
-        echo "复制后的构建产物..."
-        ls -la ./out/
-        echo "复制后的ProdLogos目录..."
-        ls -la ./out/ProdLogos/
+        echo "静态资源复制完成"
         
     - name: Setup Pages
       uses: actions/configure-pages@v4
@@ -95,9 +84,6 @@ jobs:
         path: './frontend/out'
         
   deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     needs: build
     steps:
