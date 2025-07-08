@@ -63,26 +63,28 @@ jobs:
       run: touch .nojekyll
       
     - name: Copy public assets
+      working-directory: ./frontend
       run: |
+        echo "当前工作目录: $(pwd)"
         echo "检查构建产物..."
-        ls -la ./frontend/out/
+        ls -la ./out/
         echo "检查public目录..."
-        ls -la ./frontend/public/
+        ls -la ./public/
         echo "检查ProdLogos目录..."
-        ls -la ./frontend/public/ProdLogos/
+        ls -la ./public/ProdLogos/
         
         # 确保ProdLogos目录存在
-        mkdir -p ./frontend/out/ProdLogos
+        mkdir -p ./out/ProdLogos
         # 复制所有图片文件
-        cp -r ./frontend/public/ProdLogos/* ./frontend/out/ProdLogos/
+        cp -r ./public/ProdLogos/* ./out/ProdLogos/
         # 复制其他public文件（如果还没有的话）
-        cp ./frontend/public/*.svg ./frontend/out/ 2>/dev/null || true
-        cp ./frontend/public/*.ico ./frontend/out/ 2>/dev/null || true
+        cp ./public/*.svg ./out/ 2>/dev/null || true
+        cp ./public/*.ico ./out/ 2>/dev/null || true
         
         echo "复制后的构建产物..."
-        ls -la ./frontend/out/
+        ls -la ./out/
         echo "复制后的ProdLogos目录..."
-        ls -la ./frontend/out/ProdLogos/
+        ls -la ./out/ProdLogos/
         
     - name: Setup Pages
       uses: actions/configure-pages@v4
