@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import styles from './LanguageSelector.module.scss';
+import { getImagePath } from '../../lib/imageUtils';
 
 interface Language {
   code: string;
@@ -24,7 +25,6 @@ const LanguageSelector = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedLanguage, setSelectedLanguage] = useState<Language>(languages[0]);
   const dropdownRef = useRef<HTMLDivElement>(null);
-  const basePath = process.env.NODE_ENV === 'production' ? '/prodlens' : '';
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -59,7 +59,7 @@ const LanguageSelector = () => {
         aria-label="选择语言"
         aria-expanded={isOpen}
       >
-        <Image src={`${basePath}/globe.svg`} alt="Language" width={24} height={24} />
+        <Image src={getImagePath('/globe.svg')} alt="Language" width={24} height={24} />
         <span>{selectedLanguage.name}</span>
         <svg
           className={`${styles.arrow} ${isOpen ? styles.arrowUp : ''}`}

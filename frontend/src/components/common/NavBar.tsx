@@ -4,11 +4,11 @@ import Image from 'next/image';
 import styles from "./NavBar.module.scss";
 import LanguageSelector from "./LanguageSelector";
 import { useEffect, useState } from "react";
+import { getImagePath } from '../../lib/imageUtils';
 
 const NavBar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
-  const basePath = process.env.NODE_ENV === 'production' ? '/prodlens' : '';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -41,7 +41,7 @@ const NavBar = () => {
     >
         <span className={styles.navbarLogo}>
           <Image
-            src={`${basePath}/ProdlensLogo.svg`}
+            src={getImagePath('/ProdlensLogo.svg')}
             alt="Prodlens Logo"
             width={24}
             height={24}
@@ -78,7 +78,7 @@ const NavBar = () => {
           aria-label="GitHub"
         >
           <Image
-            src={`${basePath}/github-mark-white.svg`}
+            src={getImagePath('/github-mark-white.svg')}
             alt="GitHub"
             width={24}
             height={24}

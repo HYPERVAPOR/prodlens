@@ -1,10 +1,8 @@
 import Image from 'next/image';
 import styles from "./LogoCarousel.module.scss";
+import { getProductLogoPath } from '../../lib/imageUtils';
 
 export default function LogoCarousel() {
-  // 获取basePath
-  const basePath = process.env.NODE_ENV === 'production' ? '/prodlens' : '';
-  
   // 链接管理对象
   const logoLinks = {
     cursor: "https://cursor.sh/",
@@ -15,11 +13,11 @@ export default function LogoCarousel() {
   };
 
   const logos = [
-    { src: `${basePath}/ProdLogos/cursorLogo.png`, alt: "Cursor", key: "cursor" },
-    { src: `${basePath}/ProdLogos/difyLogo.png`, alt: "Dify", key: "dify" },
-    { src: `${basePath}/ProdLogos/monicaLogo.png`, alt: "Monica", key: "monica" },
-    { src: `${basePath}/ProdLogos/n8nLogo.png`, alt: "n8n", key: "n8n" },
-    { src: `${basePath}/ProdLogos/ragflowLogo.png`, alt: "Ragflow", key: "ragflow" },
+    { src: getProductLogoPath('cursorLogo.png'), alt: "Cursor", key: "cursor" },
+    { src: getProductLogoPath('difyLogo.png'), alt: "Dify", key: "dify" },
+    { src: getProductLogoPath('monicaLogo.png'), alt: "Monica", key: "monica" },
+    { src: getProductLogoPath('n8nLogo.png'), alt: "n8n", key: "n8n" },
+    { src: getProductLogoPath('ragflowLogo.png'), alt: "Ragflow", key: "ragflow" },
   ];
 
   return (
