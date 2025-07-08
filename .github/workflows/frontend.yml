@@ -53,6 +53,10 @@ jobs:
       env:
         NODE_ENV: production
         
+    - name: List out dir (调试用，可后续删除)
+      working-directory: ./frontend
+      run: ls -R out
+      
     - name: Create .nojekyll file
       working-directory: ./frontend
       run: touch out/.nojekyll
