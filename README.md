@@ -1,6 +1,6 @@
 # Prodlens - AI Product Data Tracking & Experience Sharing Platform
 
-[![Deploy to GitHub Pages](https://github.com/HYPERVAPOR/prodlens/actions/workflows/deploy.yml/badge.svg)](https://github.com/HYPERVAPOR/prodlens/actions/workflows/deploy.yml)
+[![Deploy to GitHub Pages](https://github.com/HYPERVAPOR/prodlens/actions/workflows/frontend.yml/badge.svg)](https://github.com/HYPERVAPOR/prodlens/actions/workflows/frontend.yml)
 [![Website](https://img.shields.io/badge/Website-Live-brightgreen)](https://hypervapor.github.io/prodlens/)
 
 Prodlens is an open-source platform dedicated to AI product data tracking and user experience sharing. We are committed to providing a comprehensive research, evaluation, and discussion space for global AI products.
