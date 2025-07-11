@@ -42,7 +42,7 @@ const TrendsPage = () => {
       setChartData(data);
       setError(null);
     } catch (err) {
-      setError('获取数据失败，请稍后重试');
+      setError('Failed to fetch data. Please try again later.');
       console.error('Error fetching trend data:', err);
     } finally {
       setLoading(false);
@@ -54,7 +54,7 @@ const TrendsPage = () => {
       <div className={styles.container}>
         <div className={styles.loading}>
           <div className={styles.spinner}></div>
-          <p>正在加载趋势数据...</p>
+          <p>Loading trend data...</p>
         </div>
       </div>
     );
@@ -66,7 +66,7 @@ const TrendsPage = () => {
         <div className={styles.error}>
           <p>{error}</p>
           <button onClick={fetchTrendData} className={styles.retryButton}>
-            重试
+            Retry
           </button>
         </div>
       </div>
@@ -76,56 +76,56 @@ const TrendsPage = () => {
   return (
     <div className={styles.container}>
       <div className={styles.header}>
-        <h1>AI 产品趋势分析</h1>
-        <p>探索最新的 AI 产品市场趋势和用户行为数据</p>
+        <h1>AI Product Trend Analysis</h1>
+        <p>Explore the latest AI product market trends and user behavior data</p>
       </div>
       
       <div className={styles.chartsGrid}>
         <div className={styles.chartCard}>
-          <h2>产品趋势</h2>
-          <p>AI 工具产品的发展趋势</p>
+          <h2>Product Trends</h2>
+          <p>Development trends of AI tool products</p>
           <TrendChart 
             data={chartData.productTrends} 
-            title="产品趋势"
+            title="Product Trends"
             color="#8884d8"
           />
         </div>
         
         <div className={styles.chartCard}>
-          <h2>市场增长</h2>
-          <p>AI 市场的整体增长情况</p>
+          <h2>Market Growth</h2>
+          <p>Overall growth of the AI market</p>
           <TrendChart 
             data={chartData.marketTrends} 
-            title="市场趋势"
+            title="Market Trends"
             color="#82ca9d"
           />
         </div>
         
         <div className={styles.chartCard}>
-          <h2>用户参与度</h2>
-          <p>用户对 AI 产品的参与程度</p>
+          <h2>User Engagement</h2>
+          <p>User engagement level with AI products</p>
           <TrendChart 
             data={chartData.userEngagement} 
-            title="用户参与度"
+            title="User Engagement"
             color="#ffc658"
           />
         </div>
       </div>
       
       <div className={styles.insights}>
-        <h2>关键洞察</h2>
+        <h2>Key Insights</h2>
         <div className={styles.insightsGrid}>
           <div className={styles.insight}>
-            <h3>📈 持续增长</h3>
-            <p>AI 产品市场呈现稳定增长趋势，用户需求持续上升</p>
+            <h3>📈 Steady Growth</h3>
+            <p>The AI product market shows consistent growth trends with rising user demand</p>
           </div>
           <div className={styles.insight}>
-            <h3>🎯 用户粘性</h3>
-            <p>用户参与度稳步提升，表明 AI 产品正在成为日常工作的一部分</p>
+            <h3>🎯 User Retention</h3>
+            <p>User engagement continues to improve, indicating AI products are becoming part of daily workflows</p>
           </div>
           <div className={styles.insight}>
-            <h3>🚀 创新驱动</h3>
-            <p>新产品不断涌现，推动整个行业的快速发展</p>
+            <h3>🚀 Innovation Driven</h3>
+            <p>New products continue to emerge, driving rapid development across the industry</p>
           </div>
         </div>
       </div>

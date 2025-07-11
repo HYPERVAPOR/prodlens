@@ -32,6 +32,15 @@ const NavBar = () => {
     }
   }, []);
 
+  const handleLogoClick = () => {
+    // 根据环境判断跳转地址
+    const isDevelopment = process.env.NODE_ENV === 'development';
+    const baseUrl = isDevelopment ? 'http://localhost:3000' : 'https://hypervapor.github.io/prodlens/';
+    
+    // 使用window.location进行跳转
+    window.location.href = baseUrl;
+  };
+
   return (
     <nav 
       className={`${styles.navbar} ${isScrolled ? styles.scrolled : ''}`}
@@ -39,7 +48,19 @@ const NavBar = () => {
         '--scroll-progress': scrollProgress
       } as React.CSSProperties}
     >
-        <span className={styles.navbarLogo}>
+        <span 
+          className={styles.navbarLogo}
+          onClick={handleLogoClick}
+          style={{ cursor: 'pointer' }}
+          role="button"
+          tabIndex={0}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              handleLogoClick();
+            }
+          }}
+        >
           <Image
             src={getImagePath('/ProdlensLogo.svg')}
             alt="Prodlens Logo"
